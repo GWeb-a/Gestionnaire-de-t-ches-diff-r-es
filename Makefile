@@ -1,13 +1,15 @@
 NAME 		= 	execution
 
 SRCS 		= 	main.c \
-						find_path.c
+						trouver_chemin.c \
+						interactions.c \
+						moteur.c
 
 OBJS 		= 	$(SRCS:.c=.o)
 
 CFLAGS 	= 	-W -Wall -Wextra -Iinclude
 
-CC 			= 	gcc
+CC 			= 	gcc -g
 
 RM 			= 	rm
 
