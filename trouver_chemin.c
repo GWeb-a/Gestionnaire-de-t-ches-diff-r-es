@@ -7,13 +7,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-
-/* int checkifexecutable(const char *nom)
- *
- * Return non-zero if the name is an executable file, and
- * zero if it is not executable, or if it does not exist.
- */
-
 int est_executable(const char *nom) {
   int result;
   struct stat info_stat;
@@ -35,19 +28,6 @@ int est_executable(const char *nom) {
 
   return info_stat.st_mode & S_IXOTH;
 }
-
-
-/* int findpathof(char *chemin, const char *exe)
- *
- * Find executable by searching the PATH environment variable.
- *
- * const char *exe - executable name to search for.
- *       char *pth - the path found is stored here, space
- *                   needs to be available.
- *
- * If a path is found, returns non-zero, and the path is stored
- * in pth.  If exe is not found returns 0, with pth undefined.
- */
 
 int trouver_chemin(char *chemin, const char *commande) {
   char *recherche_chemin;
@@ -100,8 +80,6 @@ int trouver_chemin(char *chemin, const char *commande) {
 
   return trouve;
 }
-
-
 
 char *recuperer_chemin(char *commande) {
   char *chemin = malloc(sizeof(char) * (PATH_MAX+1));
